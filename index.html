@@ -1,1 +1,65 @@
-<h1>HELLO!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizations Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Visualizations Homepage</h1>
+  <p>Select a visualization from the list below:</p>
+  <ul id="visuals-list"></ul>
+
+  <script>
+    // Array of visualization filenames inside the 'visuals' folder
+    const visualFiles = [
+      "cwl_player_average_rating.html",
+      "cwl_war_player_attack_usage.html",
+      "cwl_war_player_rating_distribution.html",
+      "warlog_overall_winrate.html",
+      "warlog_recent_form.html",
+    ];
+
+    const list = document.getElementById('visuals-list');
+
+    // Dynamically generate the list of links
+    visualFiles.forEach(file => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `visuals/${file}`;
+      link.textContent = file.replace('.html', '').replace(/_/g, ' ');  // Clean up the filename for display
+      listItem.appendChild(link);
+      list.appendChild(listItem);
+    });
+  </script>
+
+</body>
+</html>
