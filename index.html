@@ -54,7 +54,7 @@
     visualFiles.forEach(file => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `visuals/${file}`;
+      link.href = `visuals/html/${file}`;
       link.textContent = file.replace('.html', '').replace(/_/g, ' ');  // Clean up the filename for display
       listItem.appendChild(link);
       list.appendChild(listItem);
